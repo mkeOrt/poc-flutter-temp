@@ -28,6 +28,7 @@ class Home extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       TextFormField(
+                        initialValue: homeProvider.databasePath,
                         autofocus: true,
                         decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.search),

@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            useMaterial3: true,
-            cardTheme: const CardTheme(color: Colors.white)),
+          useMaterial3: true,
+          cardTheme: const CardTheme(color: Colors.white),
+        ),
         home: ChangeNotifierProvider(
           create: (_) => HomeProvider(),
           child: const Home(),

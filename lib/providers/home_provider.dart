@@ -1,7 +1,15 @@
 import 'package:corazon_de_nino/models/product_cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 class HomeProvider extends ChangeNotifier {
+  HomeProvider() {
+    whereIsDataBase();
+  }
+
+  String databasePath = 'dfsgfds';
+
   final List<ProductCart> cart = [
     ProductCart(
       id: 1,
@@ -37,5 +45,10 @@ class HomeProvider extends ChangeNotifier {
   void deleteProduct(ProductCart product) {
     cart.remove(product);
     notifyListeners();
+  }
+
+  void whereIsDataBase() async {
+    sqfliteFfiInit();
+    databasePath = inMemoryDatabasePath;
   }
 }
